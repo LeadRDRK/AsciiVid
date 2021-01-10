@@ -1,0 +1,4 @@
+? add output transformations
+- add optional and unknown chunks handling
+? endianness in expand_8_to_16()
+- unify error messages (capitalization, etc.)
