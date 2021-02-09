@@ -33,6 +33,9 @@ static char LOGO[1473] =
 #include <chrono>
 #include <iostream>
 
+#define PDC_WIDE
+#define PDC_FORCE_UTF8
+#define PDC_NCMOUSE
 #include <curses.h>
 
 namespace chrono = std::chrono;

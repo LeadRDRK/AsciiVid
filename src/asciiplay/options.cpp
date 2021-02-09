@@ -30,19 +30,17 @@ Options::Options(int &argc, char** &argv)
 		if (bad) break;
 		std::string option(argv[i]);
 
-		if (i == argc - 1) {
-			input = option;
-			break;
-		}
-
-		int optionType;
-		try {
-			optionType = optionsMap.at(option);
-		} catch (int e) {
+		auto it = optionsMap.find(option);
+		if (it == optionsMap.end()) {
+            if (i == argc - 1) {
+                input = option;
+                break;
+            }
 			std::cout << "Error: Invalid option: " << option << "\n\n";
 			bad = true;
 			break;
 		}
+        int optionType = it->second;
 
 		switch (optionType) {
 		case HELP:

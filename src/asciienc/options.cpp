@@ -57,14 +57,13 @@ Options::Options(int &argc, char** &argv)
 			break;
 		}
 
-		int optionType;
-		try {
-			optionType = optionsMap.at(option);
-		} catch (int e) {
+		auto it = optionsMap.find(option);
+		if (it == optionsMap.end()) {
 			std::cout << "Error: Invalid option: " << option << "\n\n";
 			bad = true;
 			break;
 		}
+        int optionType = it->second;
 
 		if (optionType >= INPUT && optionType <= OFMT) {
 			// options within this range requires an argument
