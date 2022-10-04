@@ -31,7 +31,7 @@ with wincon is recommended.
 # Usage
 Example: Encoding a video from *.png files with audio
 ```
-asciienc -i path/to/frames_folder --ifmt png -fps 30 -a audio.ogg output.asv
+asciienc -i path/to/frames_folder -ifmt png -f 30 -a audio.ogg output.asv
 ```
 Example: Play a video
 ```
